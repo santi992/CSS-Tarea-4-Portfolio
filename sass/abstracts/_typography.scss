@@ -1,0 +1,48 @@
+//============================================//
+// Variables de exto
+//============================================//
+
+//Fuentes
+$font-familiy-heading: "Space Grotesk", sans-serif;
+$font-familiy-body: "Space Grotesk", sans-serif;
+
+//Tamaños de texto base
+$font-size-base: 18px; // 1rem
+
+//Tamaños de texto
+$font-size-heading-xxl: 6.5rem;
+$font-size-heading-xl: 4.87rem;
+$font-size-heading-l: 2.67rem;
+$font-size-heading-m: 1.33rem;
+$font-size-heading-s: 1rem;
+$font-size-body-xl: 1.5rem;
+$font-size-body-l: $font-size-base;
+$font-size-body-m: 0.85rem;
+$font-size-body-s: 0.75rem;
+
+//Grosores de texto
+$font-weight-heading: 700;
+$font-weight-body: 500;
+$font-weight-active: 700;
+
+//Interlineado
+$line-height-heading-xxl: 6.5rem;
+$line-height-heading-xl: 4.87rem;
+$line-height-heading-l: 2.67rem;
+$line-height-heading-m: 1.33rem;
+$line-height-heading-s: 1rem;
+$line-height-body-xl: 1.5rem;
+$line-height-body-l: 1.5rem;
+$line-height-body-m: 1rem;
+$line-height-body-s: 0.75rem;
+
+//Spacing de texto
+$letter-spacing-heading-xxl: -4px;
+$letter-spacing-heading-xl: -2.5px;
+$letter-spacing-heading-l: -1.5px;
+$letter-spacing-heading-m: -1px;
+$letter-spacing-heading-s: -0.5px;
+$letter-spacing-body-xl: 0;
+$letter-spacing-body-l: 1px;
+$letter-spacing-body-m: 0;
+$letter-spacing-body-s: 0;

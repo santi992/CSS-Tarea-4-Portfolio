@@ -1,0 +1,29 @@
+//============================================//
+// Colores
+//============================================//
+
+//Colores base
+$color-brand-primary: #4ee1a0;
+$color-brand-secondary: #151515;
+$color-white: #ffffff;
+$color-light-gray: #d9d9d9;
+$color-gray: #242424;
+$transparent: rgba(0, 0, 0, 0);
+
+//Colores de fondo
+$color-bg-main: $color-brand-secondary;
+$color-bg-primary: $color-gray;
+$color-bg-secondary: $color-brand-primary;
+
+//Colores de texto
+$color-text-primary: $color-white;
+$color-text-secondary: $color-white;
+$color-text-muted: $color-gray;
+
+//Colores de títulos
+$color-heading-primary: $color-white;
+$color-heading-secondary: $color-brand-secondary;
+$color-heading-tertiary: $color-brand-primary;
+
+//Degradados
+$gradient-main: linear-gradient(to bottom, $transparent, $color-gray);

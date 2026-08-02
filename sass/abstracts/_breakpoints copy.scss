@@ -1,0 +1,19 @@
+$tablet: "768px <= width < 1200px";
+$desktop: "width >= 1200px";
+
+@mixin respond($breakpoint) {
+  @media ($breakpoint) {
+    @content;
+  }
+}
+
+/*
+$tablet: 768px;
+$desktop: 1200px;
+
+@mixin respond($breakpoint) {
+  @media (width >= $breakpoint) {
+    @content;
+  }
+}
+*/

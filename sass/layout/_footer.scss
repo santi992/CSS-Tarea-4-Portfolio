@@ -1,0 +1,39 @@
+@use "../abstracts/breakpoints" as b;
+@use "../abstracts/colors" as c;
+@use "../abstracts/typography" as t;
+@use "../abstracts/mixins" as m;
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  background-color: c.$color-bg-primary;
+  & .footer-container {
+    margin: 0 auto;
+    @include m.flex($direction: column, $align: center);
+    gap: 2rem;
+    width: max-content;
+
+    & > img {
+      width: max-content;
+    }
+
+    & > ul {
+      width: 100%;
+      @include m.flex($justify: space-between);
+      & > li {
+        list-style: none;
+      }
+    }
+    @include b.respond(b.$desktop) {
+      @include m.flex($justify: space-between);
+    }
+
+    @include b.respond(b.$tablet) {
+      // responsive tablets
+    }
+
+    @include b.respond(b.$desktop) {
+      // responsive desktop
+    }
+  }
+}

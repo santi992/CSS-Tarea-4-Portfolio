@@ -1,0 +1,21 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/typography" as t;
+@use "../abstracts/mixins" as m;
+
+//Botones
+.button {
+  display: inline-block;
+  color: c.$color-heading-primary;
+  font-family: t.$font-familiy-heading;
+  font-size: t.$font-size-heading-s;
+  font-weight: t.$font-weight-heading;
+  letter-spacing: 2px;
+  text-decoration: none;
+
+  border-bottom: 5px solid c.$color-brand-primary;
+  padding-bottom: 0.5rem;
+
+  &:hover {
+    @include m.transition($time: 300ms);
+  }
+}

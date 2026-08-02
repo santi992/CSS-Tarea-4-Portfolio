@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Título para el navegador y los buscadores -->
+    <title>Adam Keyes Portfolio</title>
+
+    <!-- Descripción de la página para los buscadores -->
+    <meta name="description" content="Adam Keyes Portfolio" />
+
+    <!-- Palabras clave para los buscadores -->
+    <meta name="keywords" content="keyword" />
+
+    <!-- Autor de la página -->
+    <meta name="author" content="Santiago Sánchez" />
+
+    <!-- Favicon de la página -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Codificación-->
+    <meta charset="UTF-8" />
+
+    <!-- Para que la web sea responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Para algunos navegadores móviles -->
+    <meta name="theme-color" content="#1e7bbf" />
+
+    <!-- Tipografías importadas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <div id="body-container">
+      <header class="home-header page-container">
+        <div class="header-container">
+          <img src="img/adam-logo-w.svg" alt="brand logo" class="brand-logo" />
+          <ul class="social-media-links">
+            <li class="github">
+              <a href="https://github.com"
+              ><img
+              src="icons/github-logo-w.svg"
+              alt="github icon"
+              class="icon"
+              /></a>
+            </li>
+            <li class="frontend-mentor">
+              <a href="https://frontend-mentor.com"
+              ><img
+                  src="icons/frontendmentor-logo-w.svg"
+                  alt="frontend mentor icon"
+                  class="icon"
+              /></a>
+            </li>
+            <li class="linkedin">
+              <a href="https://linkedin.com"
+              ><img
+              src="icons/linkedin-logo-w.svg"
+              alt="linkedin icon"
+              class="icon"
+              /></a>
+            </li>
+            <li class="x.com">
+              <a href="https://x.com"
+              ><img src="icons/x-logo-w.svg" alt="x icon" class="icon"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      
+      <main class="home">
+        <section class="hero page-container">
+          <div class="hero-images">
+            <img src="img/elipses.svg" alt="elpises" id="hero-elipse" class="float"/>
+            <div class="photo-container">
+              <picture class="hero-image photo">
+                <source
+                srcset="img/adam-large.jpg"
+                media="(min-width: 1200px)"
+                />
+                <img src="img/adam-small.png" alt="photo of Adam" />
+              </picture>
+            </div>
+            <img src="img/circle-w.svg" alt="circle" id="hero-circle" class="float"/>
+          </div>
+          <div class="hero-text">
+            <div class="hero-text-title">
+              <h2>Nice to meet you!</h2>
+              <h1>I'm 
+                <span class="highlight-text">Adam Keyes</span>
+                .</h1>
+            </div>
+            <p>Based in the UK, I’m a front-end developer passionate about building accessible web apps that users love.</p>
+            <a href="#contact" class="button button-primary">CONTACT ME</a>
+          </section>
+          <div class="page-container">
+            <hr>
+          </div>
+          <section class="skills page-container">
+            <div class="card">
+              <p class="card-title">HTML</p>
+              <p class="card-description">4 years experience</p>
+            </div>
+            <div class="card">
+              <p class="card-title">CSS</p>
+              <p class="card-description">4 years experience</p>
+            </div>
+            <div class="card">
+              <p class="card-title">Javascript</p>
+              <p class="card-description">4 years experience</p>
+            </div>
+            <div class="card">
+              <p class="card-title">Accesibility</p>
+          <p class="card-description">4 years experience</p>
+        </div>
+        <div class="card">
+          <p class="card-title">React</p>
+          <p class="card-description">3 years experience</p>
+        </div>
+        <div class="card">
+          <p class="card-title">Sass</p>
+          <p class="card-description">3 years experience</p>
+        </div>
+        </section>
+
+        <div class="page-container" id="divisor-projects">
+          <hr>
+        <img src="img/elipses.svg" alt="elpises" id="projects-elipse" class="float"/>
+      </div>
+
+      <section class="projects page-container">
+        <div class="projects-title">
+          <h2>Projects</h2>
+          <a href="#contact" class="button button-primary">CONTACT ME</a>
+        </div>
+        
+        <div class="projects-grid">
+          
+          <div class="project project-1">
+            <div class="project-thumbnail">
+              <img src="img/project-1.jpg" alt="">
+            </div>
+            <h3 class="project-title">DESIGN PORTFOLIO</h3>
+            <ul class="project-skills">
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+            <div class="project-buttons">
+              <a href="#project" class="button button-primary">VIEW PROJECT</a>
+              <a href="#code" class="button button-primary">VIEW CODE</a>
+            </div>
+          </div>
+          
+          <div class="project project-2">
+            <div class="project-thumbnail">
+              <img src="img/project-2.jpg" alt="">
+            </div>
+            <h3 class="project-title">E-LEARNING LANDING PAGE</h3>
+            <ul class="project-skills">
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+            <div class="project-buttons">
+              <a href="#project" class="button button-primary">VIEW PROJECT</a>
+              <a href="#code" class="button button-primary">VIEW CODE</a>
+            </div>
+          </div>
+          
+          <div class="project project-3">
+            <div class="project-thumbnail">
+              <img src="img/project-3.jpg" alt="">
+            </div>
+            <h3 class="project-title">TODO WEB APP</h3>
+            <ul class="project-skills">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JAVASCRIPT</li>
+            </ul>
+            <div class="project-buttons">
+              <a href="#project" class="button button-primary">VIEW PROJECT</a>
+              <a href="#code" class="button button-primary">VIEW CODE</a>
+            </div>
+          </div>
+          
+          <div class="project project-4">
+            <div class="project-thumbnail">
+              <img src="img/project-4.jpg" alt="">
+            </div>
+            <h3 class="project-title">ENTERTAINMENT WEB APP</h3>
+            <ul class="project-skills">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JAVASCRIPT</li>
+            </ul>
+            <div class="project-buttons">
+              <a href="#project" class="button button-primary">VIEW PROJECT</a>
+              <a href="#code" class="button button-primary">VIEW CODE</a>
+            </div>
+          </div>
+          
+          <div class="project project-5">
+            <div class="project-thumbnail">
+              <img src="img/project-5.jpg" alt="">
+            </div>
+            <h3 class="project-title">MEMORY GAME</h3>
+            <ul class="project-skills">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JAVASCRIPT</li>
+            </ul>
+            <div class="project-buttons">
+              <a href="#project" class="button button-primary">VIEW PROJECT</a>
+              <a href="#code" class="button button-primary">VIEW CODE</a>
+            </div>
+          </div>
+          
+          <div class="project project-6">
+            <div class="project-thumbnail">
+              <img src="img/project-6.jpg" alt="">
+            </div>
+            <h3 class="project-title">ART GALLERY SHOWCASE</h3>
+            <ul class="project-skills">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JAVASCRIPT</li>
+            </ul>
+            <div class="project-buttons">
+              <a href="#project" class="button button-primary">VIEW PROJECT</a>
+              <a href="#code" class="button button-primary">VIEW CODE</a>
+            </div>
+          </div>
+        </section>
+        
+        <section class="contact page-container bg-primary">
+          
+          <div class="contact-text">
+            <h2>Contact</h2>
+            <p>I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
+          </div>
+          <form action="#send-form" method="post">
+            <div class="contact-info">
+              <input type="text" id="name" name="name" required placeholder="NAME">
+              <input type="email" id="email" name="email" required placeholder="EMAIL">
+              <textarea
+              id="message"
+              name="message"
+              placeholder="MESSAGE"
+              rows="5"></textarea>
+              <img src="img/elipses.svg" id="contact-elipse" alt="eslipses" class="float">
+            </div>
+            <button type="submit" class="button button-primary">SEND MESSAGE</button>
+          </form>
+        </section>
+
+        <div class="page-container bg-primary">
+            <hr>
+        </div>
+        
+      </main>
+      
+      <footer>
+        <div class="footer-container page-container">
+          <img src="img/adam-logo-w.svg" alt="brand logo" class="brand-logo" />
+          <ul class="social-media-links">
+            <li class="github">
+              <a href="https://github.com"
+              ><img
+            src="icons/github-logo-w.svg"
+            alt="github icon"
+            class="icon"
+            /></a>
+          </li>
+          <li class="frontend-mentor">
+            <a href="https://frontend-mentor.com"
+            ><img
+            src="icons/frontendmentor-logo-w.svg"
+            alt="frontend mentor icon"
+            class="icon"
+            /></a>
+          </li>
+          <li class="linkedin">
+            <a href="https://linkedin.com"
+            ><img
+            src="icons/linkedin-logo-w.svg"
+            alt="linkedin icon"
+            class="icon"
+            /></a>
+          </li>
+          <li class="x.com">
+            <a href="https://x.com"
+            ><img src="icons/x-logo-w.svg" alt="x icon" class="icon"
+            /></a>
+          </li>
+        </ul>
+      </div>
+      </footer>
+      
+    </div>    
+      </div>
+    </body>
+    </html>
+    

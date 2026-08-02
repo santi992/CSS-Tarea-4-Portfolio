@@ -1,0 +1,23 @@
+@use "../abstracts/breakpoints" as b;
+
+$max-width-main: 1440px;
+
+#body-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.page-container {
+  //Ancho de página
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @include b.respond(b.$tablet) {
+    padding: 0 2rem;
+  }
+
+  @include b.respond(b.$desktop) {
+    max-width: $max-width-main;
+    padding: 0 2rem;
+  }
+}

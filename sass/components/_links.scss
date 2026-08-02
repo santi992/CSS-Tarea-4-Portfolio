@@ -1,0 +1,17 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/typography" as t;
+@use "../abstracts/mixins" as m;
+
+//Links
+.link {
+  text-decoration: none;
+  color: c.$color-text-primary;
+
+  &:hover {
+    @include m.transition;
+  }
+
+  &-active {
+    font-weight: t.$font-weight-active;
+  }
+}

@@ -1,0 +1,35 @@
+@use "../abstracts/breakpoints" as b;
+@use "../abstracts/colors" as c;
+@use "../abstracts/typography" as t;
+@use "../abstracts/mixins" as m;
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+
+  & > .header-container {
+    padding-top: 1.5rem;
+    margin: 0 auto;
+    @include m.flex($direction: column, $align: center);
+    gap: 2rem;
+    width: max-content;
+
+    & > img {
+      width: max-content;
+    }
+
+    & > ul {
+      width: 100%;
+      @include m.flex($justify: space-between);
+      & > li {
+        list-style: none;
+      }
+    }
+    @include b.respond(b.$desktop) {
+      @include m.flex($justify: space-between);
+    }
+  }
+}

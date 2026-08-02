@@ -1,0 +1,28 @@
+// Flexbox. Por defecto: Horizontal, desde la izquierda, estirado
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Cajas de fondo transparente. Por defecto: negro, 0.5
+@mixin trasnp-box($color: black, $alpha: 0.5) {
+  background-color: rgba($color, $alpha);
+}
+
+// Efecto de vidrio translúcido
+@mixin glass {
+  background-color: rgba($color: white, $alpha: 0.5);
+  backdrop-filter: blur(10px);
+}
+
+// Efecto de sombra. Por defecto: 0.25
+@mixin shadow($opacity: 0.25) {
+  box-shadow: 0 0 2rem rgba(0, 0, 0, $opacity);
+}
+
+// Transición para hover. Por defecto: 0.2 segundos
+@mixin transition($time: 200ms, $mode: ease, $items: all) {
+  transition: $time $mode $items;
+}
