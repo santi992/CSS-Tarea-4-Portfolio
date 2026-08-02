@@ -5,6 +5,8 @@
 html {
   //Tamaño base de tipografías (1rem)
   font-size: t.$font-size-base;
+
+  scroll-behavior: smooth;
 }
 
 body {
