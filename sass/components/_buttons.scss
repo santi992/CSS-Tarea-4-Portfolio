@@ -1,14 +1,15 @@
 @use "../abstracts/colors" as c;
 @use "../abstracts/typography" as t;
 @use "../abstracts/mixins" as m;
+@use "../abstracts/breakpoints" as b;
 
 //Botones
 .button {
   display: inline-block;
-  color: c.$color-heading-primary;
-  font-family: t.$font-familiy-heading;
-  font-size: t.$font-size-heading-s;
-  font-weight: t.$font-weight-heading;
+  color: c.$color-headding-primary;
+  font-family: t.$font-familiy-headding;
+  font-size: t.$font-size-headding-s;
+  font-weight: t.$font-weight-headding;
   letter-spacing: 2px;
   text-decoration: none;
 
@@ -17,5 +18,6 @@
 
   &:hover {
     @include m.transition($time: 300ms);
+    color: c.$color-brand-primary;
   }
 }

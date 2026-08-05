@@ -2,30 +2,77 @@
 @use "../abstracts/colors" as c;
 @use "../abstracts/typography" as t;
 @use "../abstracts/mixins" as m;
+@use "../layout/container" as cont;
 
 // Variables locales
+$hero-photo-height-max: 824px;
+$hero-photo-height-mid: 650px;
+$hero-photo-height-min: 500px;
+$hero-photo-width-max: 593px;
+$hero-photo-width-mid: 336px;
+$hero-photo-width-min: 200px;
+$project-thumb-height: 500px;
 $elipse-width: 500px;
 $elipse-heigth: 122px;
 $circle-width: 120px;
-$circle-heigth: 120px;
-$project-photo-height: 400px;
 
 main.home {
   & .hero {
-    width: 100%;
-    padding-bottom: 5rem;
-
-    &-images {
+    &-container {
       position: relative;
       width: 100%;
-      @include m.flex($justify: center);
+      padding-bottom: 5rem;
+      border-bottom: 2px c.$color-white solid;
 
-      & > .photo-container {
-        background: c.$gradient-main;
-        height: 500px;
-        width: 200px;
+      @include b.respond(b.$tab-desk) {
+        display: grid;
+        align-items: end;
+      }
+      @include b.respond(b.$tablet) {
+        grid-template-columns:
+          calc(100% - $hero-photo-width-mid)
+          $hero-photo-width-mid;
+        padding-bottom: 3rem;
+      }
 
-        @include m.flex($align: flex-end);
+      @include b.respond(b.$desktop) {
+        grid-template-columns:
+          calc(100% - $hero-photo-width-max)
+          $hero-photo-width-max;
+        padding-bottom: 6rem;
+      }
+    }
+    &-photo {
+      position: relative;
+      margin: 0 auto;
+      z-index: -1;
+      margin-bottom: 2rem;
+
+      background: c.$gradient-main;
+      height: $hero-photo-height-min;
+      width: $hero-photo-width-min;
+
+      @include m.flex($align: flex-end);
+
+      @include b.respond(b.$tab-desk) {
+        grid-column: 2;
+        grid-row: 1;
+        margin-bottom: 0;
+        background-color: c.$color-bg-primary;
+      }
+      @include b.respond(b.$tablet) {
+        transform: translateX(cont.$container-padding-x);
+        width: $hero-photo-width-mid;
+        height: $hero-photo-height-mid;
+      }
+      @include b.respond(b.$desktop) {
+        transform: translateX(0);
+        width: $hero-photo-width-max;
+        height: $hero-photo-height-max;
+      }
+
+      & picture {
+        width: 100%;
 
         & img {
           object-fit: contain;
@@ -33,56 +80,111 @@ main.home {
       }
     }
 
-    &-text {
-      margin-top: 4rem;
+    &-info {
       @include m.flex($direction: column, $align: center);
       gap: 2rem;
 
-      &-title {
-        & > h1,
-        h2 {
-          font-size: t.$font-size-heading-l;
-          line-height: t.$line-height-heading-l;
-          text-align: center;
+      text-align: center;
+
+      @include b.respond(b.$tab-desk) {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: left;
+        align-items: flex-start;
+      }
+      @include b.respond(b.$desktop) {
+        align-self: center;
+        gap: 2 rem;
+      }
+
+      & > h1 {
+        font-size: t.$font-size-headding-l;
+        line-height: t.$line-height-headding-l;
+        width: 90%;
+
+        @include b.respond(b.$tab-desk) {
+          font-size: t.$font-size-headding-xl;
+          line-height: t.$line-height-headding-xl;
+          letter-spacing: t.$letter-spacing-headding-xl;
+        }
+        @include b.respond(b.$tablet) {
+          width: 600px;
+        }
+        @include b.respond(b.$desktop) {
+          width: 900px;
         }
       }
 
       & > p {
-        text-align: center;
+        @include b.respond(b.$tablet) {
+          width: calc(100% + cont.$container-padding-x);
+        }
+        @include b.respond(b.$desktop) {
+          width: 70%;
+        }
       }
     }
   }
 
   & .skills {
-    padding-top: 3rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
-    gap: 1rem;
-
-    & .card {
-      padding: 1rem;
+    &-container {
+      position: relative;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 1fr);
+      gap: 3rem;
       text-align: center;
+
+      @include b.respond(b.$tab-desk) {
+        padding-bottom: 0;
+        text-align: left;
+        column-gap: 0;
+        border-bottom: none;
+      }
+      @include b.respond(b.$tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+      @include b.respond(b.$desktop) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+    }
+    & .card {
       &-title {
-        font-size: t.$font-size-heading-l;
-        font-weight: t.$font-weight-heading;
+        font-size: t.$font-size-headding-l;
+        font-weight: t.$font-weight-headding;
       }
       &-description {
         margin-top: 1rem;
       }
     }
-
-    margin-bottom: 2rem;
   }
 
   & .projects {
-    padding-top: 3rem;
-    padding-bottom: 5rem;
+    &-container {
+      padding-top: 3rem;
+      padding-bottom: 5rem;
+
+      @include b.respond(b.$desktop) {
+        padding-bottom: 6rem;
+      }
+    }
+
     &-title {
       @include m.flex($justify: space-between, $align: center);
+
       & > h2 {
         padding: 0;
-        font-size: t.$font-size-heading-l;
+        font-size: t.$font-size-headding-l;
+
+        @include b.respond(b.$tab-desk) {
+          font-size: t.$font-size-headding-xl;
+        }
       }
     }
 
@@ -93,9 +195,16 @@ main.home {
       grid-template-rows: repeat(6, 1fr);
       gap: 3rem;
 
+      @include b.respond(b.$tab-desk) {
+        margin-top: 4rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+
       @include b.respond(b.$desktop) {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
+        gap: 4rem;
       }
 
       & .project {
@@ -108,13 +217,14 @@ main.home {
           }
 
           & img {
-            max-height: $project-photo-height;
-            width: 100%;
+            @include b.respond(b.$desktop) {
+              height: $project-thumb-height;
+            }
           }
         }
         &-title {
           margin-top: 2rem;
-          font-size: t.$font-size-heading-m;
+          font-size: t.$font-size-headding-m;
         }
         &-skills {
           margin-top: 1rem;
@@ -123,23 +233,31 @@ main.home {
           gap: 1.5rem;
           font-size: t.$font-size-body-l;
         }
-        &-buttons {
-          margin-top: 1rem;
-          width: 100%;
 
+        &-buttons {
+          width: 100%;
           @include m.flex();
           gap: 1.5rem;
 
           @include b.respond(b.$desktop) {
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            height: $project-thumb-height;
             gap: 30px;
 
             position: absolute;
             inset: 0;
 
-            background: rgba(0, 0, 0, 0.25);
-            //opacity: 0;
+            background: rgba(0, 0, 0, 0.75);
+            //visibility: hidden;
+            opacity: 0;
+
+            &:hover {
+              //visibility: visible;
+              opacity: 1;
+              @include m.transition($time: 300ms);
+            }
           }
         }
       }
@@ -147,20 +265,44 @@ main.home {
   }
 
   & .contact {
-    position: relative;
-    padding-top: 4rem;
-    padding-bottom: 5rem;
+    &-container {
+      position: relative;
+      padding-top: 4rem;
+      padding-bottom: 5rem;
+
+      @include b.respond(b.$tablet) {
+        width: 500px;
+      }
+      @include b.respond(b.$desktop) {
+        padding-top: 5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20%;
+      }
+    }
 
     &-text {
       text-align: center;
+
+      @include b.respond(b.$desktop) {
+        text-align: left;
+      }
+
       & > h2 {
-        font-size: t.$font-size-heading-l;
+        font-size: t.$font-size-headding-l;
+        @include b.respond(b.$desktop) {
+          font-size: t.$font-size-headding-xl;
+          margin-bottom: 3rem;
+        }
       }
     }
 
     & form {
       @include m.flex($direction: column);
-      margin-top: 2rem;
+      margin-top: 4rem;
+      @include b.respond(b.$desktop) {
+        margin: 0;
+      }
 
       & .contact-info {
         position: relative;
@@ -168,6 +310,7 @@ main.home {
 
       & input {
         cursor: text;
+        margin-bottom: 2rem;
       }
 
       & textarea {
@@ -180,11 +323,10 @@ main.home {
 
       & input,
       textarea {
-        margin-top: 2rem;
         padding-left: 2rem;
         padding-right: 2rem;
         padding-bottom: 1rem;
-        border-bottom: 1px c.$color-white solid;
+        border-bottom: 2px c.$color-white solid;
         color: c.$color-text-secondary;
         display: block;
         &::placeholder {
@@ -210,10 +352,16 @@ main.home {
 // Selectores por id
 #hero-elipse {
   left: 0;
-  transform: translateX(calc($elipse-width * -0.5));
-  top: 200px;
+  transform: translateX(calc($elipse-width * -0.5 - cont.$container-padding-x));
+  top: 80px;
   width: $elipse-width;
   z-index: -1;
+  @include b.respond(b.$desktop) {
+    transform: translateX(
+      calc(1.5 * $elipse-width * -0.5 - cont.$container-padding-x)
+    );
+    width: calc(1.5 * $elipse-width);
+  }
 }
 
 #hero-circle {
@@ -222,23 +370,52 @@ main.home {
   transform: translateX(calc($circle-width * 0.5));
   width: $circle-width;
   z-index: 1;
+
+  @include b.respond(b.$desktop) {
+    left: 0;
+    transform: translate(
+      calc(1.5 * $circle-width * -0.5),
+      calc($circle-width * -1)
+    );
+    width: calc(1.5 * $circle-width);
+  }
 }
 
-#divisor-projects {
-  position: relative;
-}
-
-#projects-elipse {
+#skills-elipse {
   right: 0;
-  transform: translateX(calc($elipse-width * 0.5));
-  top: calc($elipse-heigth * -0.5);
+  bottom: 0;
+  transform: translate(
+    calc($elipse-width * 0.5 + cont.$container-padding-x),
+    calc($elipse-heigth * 0.5)
+  );
   width: $elipse-width;
   z-index: -1;
+
+  @include b.respond(b.$desktop) {
+    transform: translateX(
+      calc(1.5 * $elipse-width * 0.5 + cont.$container-padding-x)
+    );
+    width: calc(1.5 * $elipse-width);
+  }
 }
 
 #contact-elipse {
-  right: 0;
-  transform: translateX(calc($elipse-width * -0.5));
-  bottom: calc($elipse-heigth * -0.5);
+  left: 0;
+  bottom: 0;
+  transform: translate(
+    calc($elipse-width * -0.5 - cont.$container-padding-x),
+    calc($elipse-heigth * 0.5)
+  );
   width: $elipse-width;
+
+  @include b.respond(b.$tablet) {
+    transform: translate(
+      calc($elipse-width * -1 - cont.$container-padding-x),
+      $elipse-heigth
+    );
+  }
+  @include b.respond(b.$desktop) {
+    transform: translate(-1300px, $elipse-heigth);
+    width: calc(1.5 * $elipse-width);
+  }
 }

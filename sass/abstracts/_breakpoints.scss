@@ -1,5 +1,6 @@
 $tablet: "768px <= width < 1200px";
 $desktop: "width >= 1200px";
+$tab-desk: "width >= 768px";
 
 @mixin respond($breakpoint) {
   @media ($breakpoint) {

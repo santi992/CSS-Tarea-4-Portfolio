@@ -1,6 +1,15 @@
 @use "../abstracts/breakpoints" as b;
 
-$max-width-main: 1440px;
+$max-width-desktop: 1440px;
+$max-width-tablet: 768px;
+$container-padding-x: 1rem;
+
+@include b.respond(b.$tablet) {
+  $container-padding-x: 2rem;
+}
+@include b.respond(b.$desktop) {
+  $container-padding-x: 2rem;
+}
 
 #body-container {
   width: 100%;
@@ -8,16 +17,20 @@ $max-width-main: 1440px;
 }
 
 .page-container {
-  //Ancho de página
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin: 0;
+  padding: 0 $container-padding-x;
+}
 
+.section-container {
+  margin: 0 auto;
+  padding: 0;
+
+  //Ancho de página
   @include b.respond(b.$tablet) {
-    padding: 0 2rem;
+    //max-width: $max-width-tablet;
   }
 
   @include b.respond(b.$desktop) {
-    max-width: $max-width-main;
-    padding: 0 2rem;
+    max-width: $max-width-desktop;
   }
 }

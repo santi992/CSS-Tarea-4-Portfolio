@@ -1,10 +1,14 @@
 @use "../abstracts/colors" as c;
 @use "../abstracts/typography" as t;
 @use "../abstracts/mixins" as m;
+@use "../abstracts/breakpoints" as b;
 
 html {
   //Tamaño base de tipografías (1rem)
   font-size: t.$font-size-base;
+  @include b.respond(b.$desktop) {
+    font-size: t.$font-size-base-l; //1rem
+  }
 
   scroll-behavior: smooth;
 }
@@ -40,25 +44,25 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: t.$font-weight-heading;
-  font-family: t.$font-familiy-heading;
-  color: c.$color-heading-primary;
+  font-weight: t.$font-weight-headding;
+  font-family: t.$font-familiy-headding;
+  color: c.$color-headding-primary;
 }
 
 h1 {
-  font-size: t.$font-size-heading-xl;
-  line-height: t.$line-height-heading-xl;
-  letter-spacing: t.$letter-spacing-heading-xl;
+  font-size: t.$font-size-headding-xl;
+  line-height: t.$line-height-headding-xl;
+  letter-spacing: t.$letter-spacing-headding-xl;
 }
 h2 {
-  font-size: t.$font-size-heading-xl;
-  line-height: t.$line-height-heading-xl;
-  letter-spacing: t.$letter-spacing-heading-xl;
+  font-size: t.$font-size-headding-xl;
+  line-height: t.$line-height-headding-xl;
+  letter-spacing: t.$letter-spacing-headding-xl;
 }
 h3 {
-  font-size: t.$font-size-heading-m;
-  line-height: t.$line-height-heading-m;
-  letter-spacing: t.$letter-spacing-heading-m;
+  font-size: t.$font-size-headding-m;
+  line-height: t.$line-height-headding-m;
+  letter-spacing: t.$letter-spacing-headding-m;
 }
 
 img {

@@ -1,0 +1,9 @@
+@use "colors" as c;
+
+.bg-primary {
+  background-color: c.$color-bg-primary;
+}
+
+.border-bottom-w {
+  border-bottom: 2px c.$color-white solid;
+}
